@@ -18,8 +18,10 @@ class Stock extends Component {
 
     componentDidMount() {
         getStocks()
-            .then(data => {this.setState({data})})
-            .catch(console.log)
+            .then(data => {
+                console.log(data)
+                this.setState({data})})
+            .catch(() => console.log)
             .finally(() => this.setState({loading: false}))
     }
 
